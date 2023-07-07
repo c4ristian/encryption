@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Directories
+.idea
+.pytest_cache
+
+# Other Files
+*.coverage
+gpg/decrypted.txt
+gpg/encrypted.gpg

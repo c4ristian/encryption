@@ -1,0 +1,9 @@
+# YAML for setting up a conda environment for
+# the encryption library
+name: encryption
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10
+  - sympy
