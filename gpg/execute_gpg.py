@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 This script starts a subprocess to call GnuPG for encrypting and decrypting a string. It was developed
-under Kali Linux Release 2023.2 for test purposes only. It is not intended for production use.
+under Kali Linux Release 2023.2.
 """
 
 import subprocess
