@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This script starts a subprocess to call GnuPG for encrypting and decrypting a string.
+This script starts a subprocess to call GnuPG for encrypting and decrypting a file.
 """
 
 import subprocess
@@ -13,10 +13,6 @@ def _main():
 
     :return: None.
     """
-    # Define plain text
-    text_to_encrypt = b"My plain text!"
-    print("Plain text:", text_to_encrypt)
-
     # Read passphrase
     passphrase = getpass.getpass("Passphrase:")
     passphrase2 = getpass.getpass("Passphrase:")
@@ -25,36 +21,48 @@ def _main():
         raise ValueError("Passphrases not identical!")
 
     # Perform encryption
+    print("Encrypting...")
+
     args = [
         "gpg",
-        "--symmetric",
-        "--cipher-algo", "AES256",
         "--batch",
-        "--passphrase", passphrase2
+        "--passphrase-fd", "0",
+        "--output", "encrypted.gpg",
+        "--symmetric",
+        "--yes",
+        "--cipher-algo", "AES256",
+        "plain.txt",
     ]
 
     result = subprocess.run(
-        args, input=text_to_encrypt,
+        args, input=passphrase.encode(),
         capture_output=True)
 
-    encrypt = result.stdout
-    print("Encrypted:", encrypt)
+    if result.returncode != 0:
+        raise ValueError(result.stderr)
 
     # Perform decryption
+    print("Decrypting...")
+
     args = [
         "gpg",
         "--decrypt",
-        "--cipher-algo", "AES256",
         "--batch",
-        "--passphrase", passphrase2
+        "--passphrase-fd", "0",
+        "--output", "decrypted.txt",
+        "--yes",
+        "--cipher-algo", "AES256",
+        "encrypted.gpg",
     ]
 
     result = subprocess.run(
-        args, input=encrypt,
+        args, input=passphrase.encode(),
         capture_output=True)
 
-    decrypt = result.stdout.decode()
-    print("Decrypted:", decrypt)
+    if result.returncode != 0:
+        raise ValueError(result.stderr)
+
+    print("Roundtrip successful!")
 
 
 # This block calls the main function
