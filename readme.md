@@ -21,7 +21,7 @@ conda activate encryption
 
 ## Disclaimer
 Code provided in this repository is prototypical and not intended for production use.
-In accordance with the license, there is no warranty for the published content or source code. 
+In accordance with the license, there is no warranty for the published content. 
 
 ## Contact us
 [christian.koch@th-nuernberg.de](mailto:christian.koch@th-nuernberg.de)
