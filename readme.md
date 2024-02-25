@@ -16,6 +16,17 @@ conda env create -f environment.yml
 conda activate encryption
 ```
 
+## Jupyter
+### Install Kernel 
+```sh
+python -m ipykernel install --user --name=encryption
+```
+
+### Run Notebooks
+```sh
+jupyter notebook --notebook-dir="./notebooks"
+```
+
 ## License
 [Apache 2.0](LICENSE.txt)
 

@@ -6,4 +6,6 @@ channels:
   - defaults
 dependencies:
   - python>=3.10
+  - jupyter
+  - matplotlib
   - sympy
