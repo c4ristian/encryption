@@ -3,7 +3,7 @@
 ## What is it?
 This Python library provides experiments with quantum-resistant algorithms 
 such as [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 
-and [Kyber](https://pq-crystals.org/kyber/software.shtml). It formed the basis for this 
+and [Kyber](https://pq-crystals.org/kyber/software.shtml). Key results are documented in this 
 [article](https://towardsdatascience.com/post-quantum-cryptography-with-python-and-linux-17b1ca1b3e1).
 
 ## Where to get it
