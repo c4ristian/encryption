@@ -84,7 +84,7 @@ test_kyber768: $(SOURCESKECCAK) $(HEADERSKECCAK) test_kyber.c randombytes.c
 test_kyber1024: $(SOURCESKECCAK) $(HEADERSKECCAK) test_kyber.c randombytes.c
 	$(CC) $(CFLAGS) -DKYBER_K=4 $(SOURCESKECCAK) randombytes.c test_kyber.c -o test_kyber1024
 
-execute_round_trip1024: $(SOURCESKECCAK) $(HEADERSKECCAK) test_round_trip.c randombytes.c
+execute_round_trip1024: $(SOURCESKECCAK) $(HEADERSKECCAK) execute_round_trip.c randombytes.c
 	$(CC) $(CFLAGS) -DKYBER_K=4 $(SOURCESKECCAK) randombytes.c execute_round_trip.c -o execute_round_trip1024
 
 test_kex512: $(SOURCESKECCAK) $(HEADERSKECCAK) test_kex.c randombytes.c
