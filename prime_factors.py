@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 This script tries to find the prime factors for the number RSA-260
-from the RSA Factoring Challenge.
+from the RSA Factoring Challenge ended in 2007.
 
 Warning: The script will most likely not finish, as it is extremely
 hard to perform the prime factorization.
